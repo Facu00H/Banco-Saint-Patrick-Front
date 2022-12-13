@@ -11,7 +11,7 @@ const Dashboard = () => {
                     <SideBar />
                     <div className='content w-100'>
                         <Navbar />
-                        <div className="container mt-2">
+                        <div className="container mt-3 mx-2">
                             <Outlet />
                         </div>
                     </div>

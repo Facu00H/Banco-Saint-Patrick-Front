@@ -9,14 +9,16 @@ const CardList = () => {
 
     const generateCard = (data, index) => {
         return (
-            <tr key={index}>
-                <th scope="row">{index + 1}</th>
-                <td>{data.cardNumber}</td>
-                <td>{data.founds}</td>
-                <td>
-                    <button className='btn btn-success'>Edit</button>
-                </td>
-            </tr>
+            <div key={index} className="card credit-card">
+                <div className="card-body">
+                    <div className="card-title">
+                        {data.cardNumber}
+                    </div>
+                        <p className="card-text">Founds: $ {data.founds}</p>
+                        <a href="#" className="card-link">Editar</a>
+                        <a href="#" className="card-link">Eliminar</a>
+                </div>
+            </div>
         )
     }
 
@@ -36,21 +38,10 @@ const CardList = () => {
 
     return (
         cards.length === 0 ? 
-        <p> No Tienes tarjetas aun </p> :
-        <table className='table'>
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Card Number</th>
-                    <th scope="col">Balance</th>
-                    <th scope="col">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {cards.map((card, index) => generateCard(card, index))}
-            </tbody>
-        </table>
-        
+        <p> No tiene tarjetas aun.</p> :
+        <div className="row">
+            {cards.map((card, index) => generateCard(card, index))}
+        </div> 
     );
 }
 

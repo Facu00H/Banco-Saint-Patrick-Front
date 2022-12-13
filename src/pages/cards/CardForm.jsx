@@ -23,7 +23,7 @@ const CardForm = () => {
                     icon:'success',
                     title:'Card Saved!'
                 })
-                user.creditCards.push(data.response.creditCards.id)
+                user.creditCards = data.response.creditCards
                 let updatedLocalUser = JSON.stringify(user)
                 localStorage.setItem('user', updatedLocalUser);
                 navigate('/admin/cards')            
@@ -41,41 +41,43 @@ const CardForm = () => {
         <div className="container-fluid p-4">
             <div className="row">
                 <div className="col-md-6">
-                    <form action="">
-                        <div className='text-center'>
-                            <p>Formulario de tarjetas de crédito o débito</p>
+                    <div className="card border-light mb-3">
+                        <div className="card-header">Formulario de tarjetas de crédito o débito</div>
+                        <div className="card-body">
+                            <form action="">
+                                <div className="form-outline mb-4">
+                                    <input 
+                                    type="text" 
+                                    id="inputCardNnumber" 
+                                    value={creditCard} 
+                                    onChange={(event)=>{setCreditCard(event.target.value)}} 
+                                    className="form-control" 
+                                    placeholder='Card number'/>
+                                </div>
+                                <div className="form-outline mb-4">
+                                    <input 
+                                    type="text" 
+                                    id="inputPin" 
+                                    value={PINNumber} 
+                                    onChange={(event)=>{setPINNumber(event.target.value)}} 
+                                    className="form-control" 
+                                    placeholder='Pin'/>
+                                </div>
+                                <div className="form-outline mb-4">
+                                    <input 
+                                    type="number" 
+                                    id="inputFounds" 
+                                    value={founds} 
+                                    onChange={(event)=>{setFounds(event.target.value)}} 
+                                    className="form-control" 
+                                    placeholder='Founds'/>
+                                </div>
+                                <div className='d-grid gap-2'>
+                                    <button className="btn btn-md btn-success" onClick={addCard}>Guardar</button>
+                                </div>
+                            </form>
                         </div>
-                        <div className="form-outline mb-4">
-                            <input 
-                            type="text" 
-                            id="inputCardNnumber" 
-                            value={creditCard} 
-                            onChange={(event)=>{setCreditCard(event.target.value)}} 
-                            className="form-control" 
-                            placeholder='Card number'/>
-                        </div>
-                        <div className="form-outline mb-4">
-                            <input 
-                            type="text" 
-                            id="inputPin" 
-                            value={PINNumber} 
-                            onChange={(event)=>{setPINNumber(event.target.value)}} 
-                            className="form-control" 
-                            placeholder='Pin'/>
-                        </div>
-                        <div className="form-outline mb-4">
-                            <input 
-                            type="number" 
-                            id="inputFounds" 
-                            value={founds} 
-                            onChange={(event)=>{setFounds(event.target.value)}} 
-                            className="form-control" 
-                            placeholder='Founds'/>
-                        </div>
-                        <div className='d-grid gap-2'>
-                            <button className="btn btn-md btn-success" onClick={addCard}>Guardar</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

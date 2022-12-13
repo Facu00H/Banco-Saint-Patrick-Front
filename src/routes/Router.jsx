@@ -6,6 +6,7 @@ import Cards from '../pages/cards/Cards';
 import Home from '../pages/home/Home';
 import Login from '../pages/login/Login';
 import UserRegister from '../pages/login/UserRegister';
+import TransactionForm from '../pages/transactions/TransactionForm';
 import Transactions from '../pages/transactions/Transactions';
 
 const Router = () => {
@@ -18,6 +19,7 @@ const Router = () => {
                 <Route path='cards' element={ <Cards /> }/>
                 <Route path='cards/form' element={ <CardForm /> }/>
                 <Route path='transactions' element={ <Transactions /> }/>
+                <Route path='transactions/form' element={ <TransactionForm /> }/>
                 <Route path='logout'/>
             </Route>
         </Routes>

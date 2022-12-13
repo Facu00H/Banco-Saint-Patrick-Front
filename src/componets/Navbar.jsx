@@ -15,7 +15,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='navbar navbar-expand-lg navbar-light bg-light'>
+        <div className='navbar navbar-expand-lg navbar-dark bg-primary'>
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">Usuario: {user.name + " " +  user.lastName}</a>
                 <div className="collapse navbar-collapse" id="navbarColor03">
@@ -23,7 +23,7 @@ const Navbar = () => {
                         
                     </ul>
                 <div className="d-flex">
-                    <button className="btn btn-primary my-2 my-sm-0" onClick={handleLogOut}>Log Out</button>
+                    <button className="btn btn-success my-2 my-sm-0" onClick={handleLogOut}>Log Out</button>
                 </div>
                 </div>
             </div>

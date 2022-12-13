@@ -14,7 +14,7 @@ const Cards = () => {
         <div>
             <h4>Tus tarjetas</h4>
             <button className="btn btn-success" onClick={cardForm}>Agregar Nueva</button>
-            <div className="p-4">
+            <div className="mt-3">
                 <CardList />
             </div>
         </div>
