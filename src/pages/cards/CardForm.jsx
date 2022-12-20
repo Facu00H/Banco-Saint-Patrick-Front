@@ -41,7 +41,7 @@ const CardForm = () => {
         <div className="container-fluid p-4">
             <div className="row">
                 <div className="col-md-6">
-                    <div className="card border-light mb-3">
+                    <div className="card border-secondary mb-3">
                         <div className="card-header">Formulario de tarjetas de crédito o débito</div>
                         <div className="card-body">
                             <form action="">

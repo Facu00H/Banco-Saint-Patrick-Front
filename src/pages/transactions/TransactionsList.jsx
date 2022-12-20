@@ -7,7 +7,6 @@ const TransactionsList = () => {
     const [transactions, setTransactions] = useState([])
 
     const generateTransacction = (data, index) => {
-        var dateTrasaction = new Date(data.date);
         return (
             <tr key={index}>
                 <th scope="row">{index + 1}</th>
@@ -31,21 +30,23 @@ const TransactionsList = () => {
             {
             transactions.length === 0 ? 
             <p>No tiene transacciones.</p> :
-            <table className='table'>
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Ammount</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">From</th>
-                        <th scope="col">To</th>
-                        <th scope="col">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {transactions.map((transacction, index) => generateTransacction(transacction, index))}
-                </tbody>
-            </table>
+            <div className="table-responsive">
+                <table className='table'>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Ammount</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">From</th>
+                            <th scope="col">To</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {transactions.map((transacction, index) => generateTransacction(transacction, index))}
+                    </tbody>
+                </table>
+            </div>
             }
         </div>
     );

@@ -38,11 +38,13 @@
         return (
             <div className="container-fluid">
                 <div className='row login-container'>
-                    <div className='col-md-6 text-bg-success'>
-                        <img src="" alt="" />
+                    <div className='col-md-6 text-bg-success' id='left-section'>
                     </div>
                     <div className='col-md-6 text-bg-light d-flex align-items-center justify-content-center'>
                         <form className='form-login'>
+                            <div className='text-center mb-1'>
+                                <img src={require('../../images/Vertical-Logo-Saint-Patrick.png')} style={{ height:100, margin:10 }} alt="" />
+                            </div>
                             <div className='text-center'>
                                 <p>Bienvenido al la Banca por Internet</p>
                             </div>

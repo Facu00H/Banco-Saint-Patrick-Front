@@ -16,6 +16,13 @@ code {
   height: calc(100vh);
 }
 
+#left-section {
+  background: url('../src/images/hombre_con_tarjeta.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
 .register-container {
   height: calc(100vh);
 }
@@ -38,8 +45,3 @@ code {
   margin: 0 auto;
 }
 
-.credit-card {
-  width: 18rem;
-  margin-left: 10px;
-  margin-bottom: 10px;
-}

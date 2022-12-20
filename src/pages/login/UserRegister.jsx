@@ -45,10 +45,13 @@ const UserRegister = () => {
     return (
         <div className="container-fluid">
             <div className='row register-container'>
-                <div className='col-md-6 text-bg-success'>
+                <div className='col-md-6 text-bg-success' id='left-section'>
                 </div>
                 <div className='col-md-6 text-bg-light d-flex align-items-center justify-content-center'>
                     <form action="" className='form-signin'>
+                        <div className='text-center mb-1'>
+                            <img src={require('../../images/Vertical-Logo-Saint-Patrick.png')} style={{ height:100, margin:10 }} alt="" />
+                        </div>
                         <div className='text-center'>
                             <p>Ingrese sus datos</p>
                         </div>
@@ -65,8 +68,8 @@ const UserRegister = () => {
                             <input type="password" className="form-control" placeholder='Contraseña' ref={passwordRef}/>
                         </div>
                         <div className='d-grid gap-2'>
-                            <button className="btn btn-md btn-success" type="submit" onClick={addUser}>Registrarse</button>
-                            <button className="btn btn-md btn-primary" onClick={login}>Login</button>
+                            <button className="btn btn-md btn-primary" type="submit" onClick={addUser}>Registrarse</button>
+                            <button className="btn btn-md btn-success" onClick={login}>Login</button>
                         </div>
                     </form>
                 </div>

@@ -8,10 +8,10 @@ const Dashboard = () => {
         <div>
             <div>
                 <div className='flex'>
-                    <SideBar />
+                    {/*<SideBar />*/}
                     <div className='content w-100'>
                         <Navbar />
-                        <div className="container mt-3 mx-2">
+                        <div className="container mt-3">
                             <Outlet />
                         </div>
                     </div>
