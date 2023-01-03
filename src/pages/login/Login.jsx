@@ -13,22 +13,22 @@
         const loginUser = async(e) => {
             e.preventDefault()
             await axios.post("http://localhost:5000/user/login/", {email, password})
-                .then(({data}) => {
-                    Swal.fire({
-                        icon:'success',
-                        title:'Welcome!'
-                    })
-                    let loguedUser = JSON.stringify(data.response);
-                    localStorage.setItem('user', loguedUser);
-                    navigate('/admin/home')            
+            .then(({data}) => {
+                Swal.fire({
+                    icon:'success',
+                    title:'Welcome!'
                 })
-                .catch(({response}) => {
-                    Swal.fire({
-                        icon:'error',
-                        title:'Ups... Something went wrong'
-                    })
-                    console.log(response);
+                let loguedUser = JSON.stringify(data.response);
+                localStorage.setItem('user', loguedUser);
+                navigate('/admin/home')            
+            })
+            .catch(({response}) => {
+                Swal.fire({
+                    icon:'error',
+                    title:'Ups... Something went wrong'
                 })
+                console.log(response);
+            })
         }
 
         const registrarse = () => {

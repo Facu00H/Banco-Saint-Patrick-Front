@@ -18,7 +18,7 @@ const Navbar = () => {
     return (
         <div className='navbar navbar-expand-lg navbar-dark bg-primary'>
             <div className="container-fluid">
-                <a className="navbar-brand" href="#"><img src={require('../images/Banco-Saint-Patrick-Logo.png')} style={{ height:50 }} alt="" /></a>
+                <a className="navbar-brand" href="#"><img src={require('../images/logo_spb_white.png')} style={{ height:50 }} alt="" /></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -26,13 +26,13 @@ const Navbar = () => {
                 <ul className="navbar-nav me-auto">
                     
                     <li className='nav-item'>
-                        <NavLink to="home" className={(navData) => navData.isActive ? "active nav-link" : "text-dark nav-link" }>Inicio</NavLink>
+                        <NavLink to="home" className={(navData) => navData.isActive ? "active nav-link" : "text-light nav-link" }>Inicio</NavLink>
                     </li>
                     <li className='nav-item'>
-                        <NavLink to="cards" className={(navData) => navData.isActive ? "active nav-link" : "text-dark nav-link" }>Tarjetas</NavLink>
+                        <NavLink to="cards" className={(navData) => navData.isActive ? "active nav-link" : "text-light nav-link" }>Tarjetas</NavLink>
                     </li>
                     <li className='nav-item'>
-                        <NavLink to="transactions" className={(navData) => navData.isActive ? "active nav-link" : "text-dark nav-link" }>Transacciones</NavLink>
+                        <NavLink to="transactions" className={(navData) => navData.isActive ? "active nav-link" : "text-light nav-link" }>Transacciones</NavLink>
                     </li>
                     
                 </ul>

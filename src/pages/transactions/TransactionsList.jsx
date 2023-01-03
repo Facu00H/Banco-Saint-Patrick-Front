@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 const TransactionsList = () => {
@@ -5,6 +6,22 @@ const TransactionsList = () => {
     let user = JSON.parse(userString);
 
     const [transactions, setTransactions] = useState([])
+    const [email, setEmail] = useState(user.email);
+
+    const getUser = async () => {
+            
+            const params = {
+                email: email
+            }
+
+            await axios.get("http://localhost:5000/user/", { params })
+            .then(({data}) => {
+                console.log(data);         
+            })
+            .catch(({response}) => {
+                console.log(response);
+            })
+    }
 
     const generateTransacction = (data, index) => {
         return (
@@ -22,7 +39,9 @@ const TransactionsList = () => {
     }
 
     useEffect(() => {
+        console.log(email);
         setTransactions(user.transactions)
+        getUser()
     }, []);
 
     return (
