@@ -19,6 +19,20 @@ const TransactionForm = () => {
     const makeTransfer = async (e) => {
         e.preventDefault()
         console.log({cardSelected, cardNumberTo, ammount, pin});
+
+        let localTransactions = localStorage.getItem('listTransactions')
+        const transaction = {cardSelected, cardNumberTo, ammount, pin}
+        let listTransactions = []
+
+        if(!localTransactions){
+            listTransactions.push(transaction)
+            localStorage.setItem('listTransactions', JSON.stringify(listTransactions));
+        } else {
+            const arrayTransacctions = JSON.parse(localTransactions)
+            arrayTransacctions.push(transaction)
+            localStorage.setItem('listTransactions', JSON.stringify(arrayTransacctions));
+        }
+
         const from = cardSelected
         const to = cardNumberTo
         const PIN = pin

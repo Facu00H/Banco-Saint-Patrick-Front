@@ -28,17 +28,22 @@ const Home = () => {
         )
     }
 
+    const formatearFecha = (fecha) => {
+        const fechaFormateada = new Date(fecha)
+        return fechaFormateada.toLocaleDateString()
+    }
+
     const generateTransacction = (data, index) => {
         var dateTrasaction = new Date(data.date);
         return (
             <tr key={index}>
                 <th scope="row">{index + 1}</th>
                 <td>${data.ammount}</td>
-                <td>{data.date}</td>
+                <td>{formatearFecha(data.date)}</td>
                 <td>{data.from.email}</td>
                 <td>{data.to.email}</td>
                 <td>
-                    <button className='btn btn-success'>View</button>
+                    <button className='btn btn-success' disabled>View</button>
                 </td>
             </tr>
         )

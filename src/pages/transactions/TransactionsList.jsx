@@ -6,21 +6,10 @@ const TransactionsList = () => {
     let user = JSON.parse(userString);
 
     const [transactions, setTransactions] = useState([])
-    const [email, setEmail] = useState(user.email);
 
-    const getUser = async () => {
-            
-            const params = {
-                email: email
-            }
-
-            await axios.get("http://localhost:5000/user/", { params })
-            .then(({data}) => {
-                console.log(data);         
-            })
-            .catch(({response}) => {
-                console.log(response);
-            })
+    const formatearFecha = (fecha) => {
+        const fechaFormateada = new Date(fecha)
+        return fechaFormateada.toLocaleDateString()
     }
 
     const generateTransacction = (data, index) => {
@@ -28,7 +17,7 @@ const TransactionsList = () => {
             <tr key={index}>
                 <th scope="row">{index + 1}</th>
                 <td>${data.ammount}</td>
-                <td>{data.date}</td>
+                <td>{formatearFecha(data.date)}</td>
                 <td>{data.from.email}</td>
                 <td>{data.to.email}</td>
                 <td>
@@ -38,10 +27,13 @@ const TransactionsList = () => {
         )
     }
 
-    useEffect(() => {
-        console.log(email);
+    const getTransacctions = () => {
         setTransactions(user.transactions)
-        getUser()
+    }
+
+    useEffect(() => {
+        getTransacctions()
+        console.log(transactions);
     }, []);
 
     return (
