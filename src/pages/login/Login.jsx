@@ -12,7 +12,7 @@
 
         const loginUser = async(e) => {
             e.preventDefault()
-            await axios.post("http://localhost:5000/user/login/", {email, password})
+            await axios.post("https://puzzled-lapel-wasp.cyclic.app/user/login/", {email, password})
             .then(({data}) => {
                 Swal.fire({
                     icon:'success',

@@ -21,7 +21,7 @@ const UserRegister = () => {
             emailRef.current.value,
             passwordRef.current.value
         )
-        await axios.post("http://localhost:5000/user/", newUser)
+        await axios.post("https://puzzled-lapel-wasp.cyclic.app/user/", newUser)
             .then(({data}) => {
                 Swal.fire({
                     icon:'success',

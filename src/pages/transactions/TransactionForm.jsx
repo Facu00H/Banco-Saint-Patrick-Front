@@ -36,7 +36,7 @@ const TransactionForm = () => {
         const from = cardSelected
         const to = cardNumberTo
         const PIN = pin
-        await axios.post('http://localhost:5000/user/transaction',{from, to, ammount, PIN})
+        await axios.post('https://puzzled-lapel-wasp.cyclic.app/user/transaction',{from, to, ammount, PIN})
         .then(({data}) => {
             Swal.fire({
                 icon:'success',

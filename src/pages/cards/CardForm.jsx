@@ -17,7 +17,7 @@ const CardForm = () => {
 
     const addCard = async (e) => {
         e.preventDefault()
-        await axios.post("http://localhost:5000/cards/", {email, creditCard, PINNumber, founds})
+        await axios.post("https://puzzled-lapel-wasp.cyclic.app/cards/", {email, creditCard, PINNumber, founds})
             .then(({data}) => {
                 Swal.fire({
                     icon:'success',
